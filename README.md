@@ -21,3 +21,4 @@ npm i bcryptjs
 
 # Extras
 "start": "nodemon --exec babel-node src/index.js"
+"watch": "babel-watch -L src/index.js"

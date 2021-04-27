@@ -3,10 +3,15 @@ import { gql } from "apollo-server";
 const typeDefs= gql`
 
     type User{
-        uid: String!
-        name: String!
-        lastName: String!
-        email: String!
+        uid: ID
+        name: String
+        lastName: String
+        dni: String
+        email: String
+        cellNumber: String
+        password: String
+        role: String
+        img: String
 
     }
     
@@ -22,6 +27,23 @@ const typeDefs= gql`
         email: String
         password: String
     }
+    enum RoleUser{
+       ADMIN_ROLE
+       SALES_ROLE
+       USER_ROLE
+   }
+    input UserInput{
+        name: String
+        lastName: String
+        dni: String
+        email: String
+        cellNumber: String
+        password: String
+        role: RoleUser
+        img: String
+    }
+
+    
     type Token {
         token: String
     }
@@ -35,6 +57,7 @@ const typeDefs= gql`
 
     type Mutation {
         authUser(input: AuthUserInput ): Token
+        createUser(input: UserInput): User
     }
 
 
