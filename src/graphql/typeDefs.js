@@ -14,6 +14,16 @@ const typeDefs= gql`
         img: String
 
     }
+
+    type Client{
+        id: ID
+        dni: String
+        nombre: String,
+        apellido: String,
+        direccion: String,
+        correo: String,
+        vendedor_id: ID,
+    }
     
     type Partner {
         name: String!
@@ -27,6 +37,15 @@ const typeDefs= gql`
         email: String
         password: String
     }
+
+    input ClientInput{
+        dni: String
+       nombre: String
+       apellido: String
+       direccion: String
+       correo: String
+
+   }
     enum RoleUser{
        ADMIN_ROLE
        SALES_ROLE
@@ -52,12 +71,14 @@ const typeDefs= gql`
     type Query {
         partner: [Partner!]!
         user: [User!]!
+        getUser: User
         
     }
 
     type Mutation {
         authUser(input: AuthUserInput ): Token
         createUser(input: UserInput): User
+        createClient(input: ClientInput): Client
     }
 
 
