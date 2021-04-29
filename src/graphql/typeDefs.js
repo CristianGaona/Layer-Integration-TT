@@ -72,6 +72,8 @@ const typeDefs= gql`
         partner: [Partner!]!
         user: [User!]!
         getUser: User
+        getClientUser: [Client]
+        getClientsUser:[Client]
         
     }
 

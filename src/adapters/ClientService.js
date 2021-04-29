@@ -13,6 +13,14 @@ export default class ClientService {
 
     }
 
+    static async getClients(id_vendedor){
+        const body = await got.get(`${CLIENT_SERVICE_URI}/myClients/${id_vendedor}`).json();
+
+        return body;
+    }
+
+    
+
 
     
 }
