@@ -1,6 +1,6 @@
 import got from "got";
 
-const USER_SERVICE_URI = "http://192.168.1.102:8080/api/v1";
+const USER_SERVICE_URI = "https://app-users-microservice.herokuapp.com/api/v1";
 
 export default class UserService{
     

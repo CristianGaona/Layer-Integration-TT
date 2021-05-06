@@ -26,11 +26,18 @@ const typeDefs= gql`
     }
     
     type Partner {
-        name: String!
-        id: ID!
-        website: String!
-        parent_name: String!
-        email: String!
+        name: String
+        display_name: String
+        vat: String
+        id: ID
+        website: String
+        parent_name: String
+        email: String
+        street: String 
+        street2: String
+        city: String
+        phone: String
+        mobile: String
     }
 
     input AuthUserInput {
@@ -62,9 +69,26 @@ const typeDefs= gql`
         img: String
     }
 
+    input  PartnerInput{
+        name: String
+        parent_id: Int
+        vat: String
+        website: String
+        street: String 
+        street2: String
+        city: String
+        email: String
+        phone: String
+        mobile: String
+    }
+
     
     type Token {
         token: String
+    }
+
+    type Data {
+        data: String
     }
 
     #Queries an Mutations
@@ -81,6 +105,7 @@ const typeDefs= gql`
         authUser(input: AuthUserInput ): Token
         createUser(input: UserInput): User
         createClient(input: ClientInput): Client
+        createPartner(input: PartnerInput): String
     }
 
 
