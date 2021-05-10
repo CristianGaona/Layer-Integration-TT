@@ -1,7 +1,7 @@
 import { AuthenticationError } from "apollo-server-errors";
 import got from "got";
 //const fetch = require('node-fetch');
-const AUTH_SERVICE_URI = "http://192.168.1.102:8080/api/v1/auth";
+const AUTH_SERVICE_URI = "https://app-users-microservice.herokuapp.com/api/v1/auth";
 
 export default class AuthUsers{
 

@@ -105,7 +105,7 @@ const typeDefs= gql`
         authUser(input: AuthUserInput ): Token
         createUser(input: UserInput): User
         createClient(input: ClientInput): Client
-        createPartner(input: PartnerInput): String
+        createPartner(input: PartnerInput): Partner
     }
 
 
