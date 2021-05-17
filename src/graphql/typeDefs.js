@@ -40,6 +40,23 @@ const typeDefs= gql`
         mobile: String
     }
 
+    type Order {
+        id: ID
+        wishes: [OrderGroup]
+        total: Int
+        id_client: String
+        id_sale: String
+        create_at: String
+        status: OrderStatus
+    }
+
+    type OrderGroup{
+        id_producto: String
+        total: Int
+    }
+
+    
+
     input AuthUserInput {
         email: String
         password: String
@@ -47,10 +64,10 @@ const typeDefs= gql`
 
     input ClientInput{
         dni: String
-       nombre: String
-       apellido: String
-       direccion: String
-       correo: String
+        nombre: String
+        apellido: String
+        direccion: String
+        correo: String
 
    }
     enum RoleUser{
@@ -82,6 +99,24 @@ const typeDefs= gql`
         mobile: String
     }
 
+    input OrderInput{
+        wishes: [OrderProductInput]
+        total: Int
+        id_client: String
+        status: OrderStatus
+    }
+
+    enum OrderStatus{
+       PENDIENTE
+       COMPLETADO
+       CANCELADO
+    }
+
+    input OrderProductInput{
+        id_producto: String
+        total: Int
+    }
+
     
     type Token {
         token: String
@@ -106,6 +141,7 @@ const typeDefs= gql`
         createUser(input: UserInput): User
         createClient(input: ClientInput): Client
         createPartner(input: PartnerInput): Partner
+        createOrder(input: OrderInput): Order
     }
 
 
