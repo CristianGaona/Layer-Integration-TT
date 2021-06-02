@@ -1,5 +1,5 @@
 import got from 'got';
-const CLIENT_SERVICE_URI = "http://localhost:5000/devops/microservice/clients"
+const CLIENT_SERVICE_URI = "http://localhost:9000/devops/microservice/clients"
 
 export default class ClientService {
  

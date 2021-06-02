@@ -40,6 +40,19 @@ const typeDefs= gql`
         mobile: String
     }
 
+    type Car {
+        anio: Int
+        color: String
+        creado: String
+        existencia: Int
+        id: ID
+        marca: String
+        modelo: String
+        precio: Int
+        puertas: String
+        transmision: String
+    }
+
     type Order {
         id: ID
         wishes: [OrderGroup]
@@ -54,9 +67,6 @@ const typeDefs= gql`
         id_producto: String
         total: Int
     }
-
-    
-
     input AuthUserInput {
         email: String
         password: String
@@ -133,6 +143,7 @@ const typeDefs= gql`
         getUser: User
         getClientUser: [Client]
         getClientsUser:[Client]
+        getCar: [Car]
         
     }
 
