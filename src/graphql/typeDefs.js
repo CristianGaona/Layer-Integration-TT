@@ -153,6 +153,7 @@ const typeDefs= gql`
         createClient(input: ClientInput): Client
         createPartner(input: PartnerInput): Partner
         createOrder(input: OrderInput): Order
+        deleteClient(id: ID!): String
     }
 
 
