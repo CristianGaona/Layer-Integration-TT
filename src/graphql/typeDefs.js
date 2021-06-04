@@ -141,8 +141,8 @@ const typeDefs= gql`
         partner: [Partner!]!
         user: [User!]!
         getUser: User
-        getClientUser: [Client]
         getClientsUser:[Client]
+        getClient(id: ID!): Client
         getCar: [Car]
         
     }
@@ -151,9 +151,11 @@ const typeDefs= gql`
         authUser(input: AuthUserInput ): Token
         createUser(input: UserInput): User
         createClient(input: ClientInput): Client
+        deleteClient(id: ID!): String
+        updateClient(id: ID!, input: ClientInput): Client
         createPartner(input: PartnerInput): Partner
         createOrder(input: OrderInput): Order
-        deleteClient(id: ID!): String
+        
     }
 
 
