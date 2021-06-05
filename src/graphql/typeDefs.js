@@ -155,6 +155,7 @@ const typeDefs= gql`
         updateClient(id: ID!, input: ClientInput): Client
         createPartner(input: PartnerInput): Partner
         createOrder(input: OrderInput): Order
+        deleteCar(id: ID!): String
         
     }
 

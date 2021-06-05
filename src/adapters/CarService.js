@@ -6,4 +6,10 @@ export default class CarService {
         const body = await got.get(`${CAR_SERVICE_URI}/cars`).json();
         return body;
     }
+
+    static async deleteCar(id){
+        const body = await got.delete(`${CAR_SERVICE_URI}/cars/${id}`).json();
+        return "El vehiculo ha sido eliminado";
+    }
+    
 }
