@@ -6,3 +6,5 @@ export { default as createOrder} from "./createOrder";
 export { default as deleteClient} from "./deleteClient";
 export { default as updateClient} from "./updateClient";
 export { default as deleteCar} from "./deleteCar";
+export { default as createCar} from "./createCar";
+export { default as updateCar} from "./updateCar";

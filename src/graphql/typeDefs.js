@@ -49,7 +49,7 @@ const typeDefs= gql`
         marca: String
         modelo: String
         precio: Int
-        puertas: String
+        puertas: Int
         transmision: String
     }
 
@@ -80,6 +80,18 @@ const typeDefs= gql`
         correo: String
 
    }
+
+   input CarInput{
+        marca: String
+        modelo: String
+        anio: Int
+        puertas: Int
+        color: String
+        transmision: String
+        existencia: Int,
+        precio: Int
+   }
+
     enum RoleUser{
        ADMIN_ROLE
        SALES_ROLE
@@ -144,6 +156,7 @@ const typeDefs= gql`
         getClientsUser:[Client]
         getClient(id: ID!): Client
         getCar: [Car]
+        getCarId(id: ID!): Car
         
     }
 
@@ -155,7 +168,9 @@ const typeDefs= gql`
         updateClient(id: ID!, input: ClientInput): Client
         createPartner(input: PartnerInput): Partner
         createOrder(input: OrderInput): Order
+        createCar(input: CarInput): Car
         deleteCar(id: ID!): String
+        updateCar(id: ID!, input: CarInput): Car
         
     }
 

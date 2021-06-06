@@ -7,7 +7,6 @@ export default class ClientService {
         const body = await got.post(`${CLIENT_SERVICE_URI }/clients`,{
             json:{dni, nombre, apellido, direccion, correo, vendedor_id}
         }).json();
-        console.info({body})
        return body;
 
     }
