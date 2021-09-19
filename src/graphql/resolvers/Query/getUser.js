@@ -1,8 +1,6 @@
-
+import UserService from "#root/adapters/UserService";
 const getUserResolver = async (_,{}, ctx) =>{
-    console.log("aAQUI")
-    console.info(ctx.user)
-    return ctx.user;  
+    return await UserService.fetchUser();  
 };
 
 export default  getUserResolver;
